@@ -1,8 +1,8 @@
 # TTTPresentView
-PresentView like jianshu JD
+
 ![image](https://github.com/an-ttt/TTTPresentView/blob/master/TTTPresentView.gif)
 
-
+PresentView like jianshu JD
 two steps：
 ```object-c
 1. 
@@ -22,3 +22,5 @@ two steps：
     [containerVC dismissView];
 }
 ```
+
+see more in demo.
