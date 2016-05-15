@@ -15,6 +15,9 @@
 		4386E93E1CE6FC15004C43CA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4386E93C1CE6FC15004C43CA /* LaunchScreen.storyboard */; };
 		4386E9491CE6FC15004C43CA /* TTTPresentViewControllerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 4386E9481CE6FC15004C43CA /* TTTPresentViewControllerTests.m */; };
 		4386E9541CE6FC15004C43CA /* TTTPresentViewControllerUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 4386E9531CE6FC15004C43CA /* TTTPresentViewControllerUITests.m */; };
+		4386E9641CE6FC32004C43CA /* UIViewController+TTTPresentView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4386E9631CE6FC32004C43CA /* UIViewController+TTTPresentView.m */; };
+		4386E9671CE6FCE0004C43CA /* DemoToPresentViewContorller.m in Sources */ = {isa = PBXBuildFile; fileRef = 4386E9661CE6FCE0004C43CA /* DemoToPresentViewContorller.m */; };
+		4386E96A1CE6FD97004C43CA /* TTTPresentContainerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4386E9691CE6FD97004C43CA /* TTTPresentContainerView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +54,12 @@
 		4386E94F1CE6FC15004C43CA /* TTTPresentViewControllerUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TTTPresentViewControllerUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		4386E9531CE6FC15004C43CA /* TTTPresentViewControllerUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TTTPresentViewControllerUITests.m; sourceTree = "<group>"; };
 		4386E9551CE6FC15004C43CA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4386E9621CE6FC32004C43CA /* UIViewController+TTTPresentView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+TTTPresentView.h"; sourceTree = "<group>"; };
+		4386E9631CE6FC32004C43CA /* UIViewController+TTTPresentView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+TTTPresentView.m"; sourceTree = "<group>"; };
+		4386E9651CE6FCE0004C43CA /* DemoToPresentViewContorller.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DemoToPresentViewContorller.h; sourceTree = "<group>"; };
+		4386E9661CE6FCE0004C43CA /* DemoToPresentViewContorller.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DemoToPresentViewContorller.m; sourceTree = "<group>"; };
+		4386E9681CE6FD97004C43CA /* TTTPresentContainerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TTTPresentContainerView.h; sourceTree = "<group>"; };
+		4386E9691CE6FD97004C43CA /* TTTPresentContainerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TTTPresentContainerView.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,10 +110,13 @@
 		4386E92D1CE6FC15004C43CA /* TTTPresentViewController */ = {
 			isa = PBXGroup;
 			children = (
+				4386E9611CE6FC19004C43CA /* TTTPresent */,
 				4386E9311CE6FC15004C43CA /* AppDelegate.h */,
 				4386E9321CE6FC15004C43CA /* AppDelegate.m */,
 				4386E9341CE6FC15004C43CA /* ViewController.h */,
 				4386E9351CE6FC15004C43CA /* ViewController.m */,
+				4386E9651CE6FCE0004C43CA /* DemoToPresentViewContorller.h */,
+				4386E9661CE6FCE0004C43CA /* DemoToPresentViewContorller.m */,
 				4386E9371CE6FC15004C43CA /* Main.storyboard */,
 				4386E93A1CE6FC15004C43CA /* Assets.xcassets */,
 				4386E93C1CE6FC15004C43CA /* LaunchScreen.storyboard */,
@@ -138,6 +150,17 @@
 				4386E9551CE6FC15004C43CA /* Info.plist */,
 			);
 			path = TTTPresentViewControllerUITests;
+			sourceTree = "<group>";
+		};
+		4386E9611CE6FC19004C43CA /* TTTPresent */ = {
+			isa = PBXGroup;
+			children = (
+				4386E9621CE6FC32004C43CA /* UIViewController+TTTPresentView.h */,
+				4386E9631CE6FC32004C43CA /* UIViewController+TTTPresentView.m */,
+				4386E9681CE6FD97004C43CA /* TTTPresentContainerView.h */,
+				4386E9691CE6FD97004C43CA /* TTTPresentContainerView.m */,
+			);
+			name = TTTPresent;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -271,8 +294,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				4386E9361CE6FC15004C43CA /* ViewController.m in Sources */,
+				4386E96A1CE6FD97004C43CA /* TTTPresentContainerView.m in Sources */,
+				4386E9671CE6FCE0004C43CA /* DemoToPresentViewContorller.m in Sources */,
 				4386E9331CE6FC15004C43CA /* AppDelegate.m in Sources */,
 				4386E9301CE6FC15004C43CA /* main.m in Sources */,
+				4386E9641CE6FC32004C43CA /* UIViewController+TTTPresentView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -498,6 +524,7 @@
 				4386E95A1CE6FC15004C43CA /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		4386E95B1CE6FC15004C43CA /* Build configuration list for PBXNativeTarget "TTTPresentViewControllerTests" */ = {
 			isa = XCConfigurationList;
@@ -506,6 +533,7 @@
 				4386E95D1CE6FC15004C43CA /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		4386E95E1CE6FC15004C43CA /* Build configuration list for PBXNativeTarget "TTTPresentViewControllerUITests" */ = {
 			isa = XCConfigurationList;
@@ -514,6 +542,7 @@
 				4386E9601CE6FC15004C43CA /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
