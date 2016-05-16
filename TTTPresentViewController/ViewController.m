@@ -36,7 +36,7 @@
     UIStoryboard *sb = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
     UIViewController *toPresentVC = [sb instantiateViewControllerWithIdentifier:@"DemoToPresentViewContorller"];
     
-    [self TTTPresentViewController:toPresentVC percentToShow:0.5];
+    [self TTTPresentViewController:toPresentVC percentToShow:1.0];
 }
 
 - (void)didReceiveMemoryWarning {

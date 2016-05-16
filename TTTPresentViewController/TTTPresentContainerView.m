@@ -15,6 +15,7 @@
 
 @interface TTTPresentContainerView ()
 
+@property (nonatomic, strong)UIViewController *mainViewController;
 @property (nonatomic, strong)UIView *mainView;
 @property (nonatomic, strong)UIView *shadowView;
 
@@ -53,17 +54,19 @@
 }
 
 
-- (void)addMainView:(UIView *)view percentToShow:(CGFloat)percentToShow
+- (void)addMainViewController:(UIViewController *)viewController percentToShow:(CGFloat)percentToShow
 {
     //add shadow view
     [self addSubview:self.shadowView];
     
-    _mainView = view;
+    _mainViewController = viewController;
+    _mainView = viewController.view;
     _mainView.frame = CGRectMake(0.0f, self.frame.size.height, self.frame.size.width, self.frame.size.height * percentToShow);
     [self addSubview:_mainView];
     
+    _mainView.alpha = 0.5;
  
-    _naviController = [self findNaviViewController:self.superview];
+    _naviController = viewController.navigationController;
     NSAssert(_naviController, @"必须要找出navigation，而且所传的view必须要embed一个navigation controller");
 }
 
@@ -91,10 +94,12 @@
             CGFloat factorWidth = self.mainView.frame.size.width / (KScaleFactor * 10);
             CGFloat offsetX = factorWidth * (1 - KScaleFactor) / 2 * 10;
             
-            CGFloat factorHeight = self.mainView.frame.size.height / (KScaleFactor * 10);
+            CGFloat factorHeight = self.frame.size.height / (KScaleFactor * 10);
             CGFloat offsetY = factorHeight * (1 - KScaleFactor) / 2 * 10;
+            //KYOffsetFactor 偏移量经过transform之后的偏移量
+            CGFloat offsetYAfterTransform = self.frame.size.height * KYOffsetFactor / KScaleFactor;
 
-            self.mainView.frame = CGRectMake(self.mainView.frame.origin.x - offsetX, self.frame.size.height - self.mainView.frame.size.height, self.mainView.frame.size.width + 2 * offsetX, self.mainView.frame.size.height + self.frame.size.height * KYOffsetFactor / KScaleFactor + 2 * offsetY);
+            self.mainView.frame = CGRectMake(self.mainView.frame.origin.x - offsetX, self.frame.size.height - self.mainView.frame.size.height, self.mainView.frame.size.width + 2 * offsetX, self.mainView.frame.size.height + offsetY +offsetYAfterTransform);
             
         } completion:^(BOOL finished) {
             
@@ -124,6 +129,7 @@
             
         } completion:^(BOOL finished) {
             [self removeFromSuperview];
+            [_mainViewController removeFromParentViewController];
         }];
         
     }];

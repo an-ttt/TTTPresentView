@@ -13,5 +13,5 @@
 - (void)presentView;
 - (void)dismissView;
 
-- (void)addMainView:(UIView *)view percentToShow:(CGFloat)percentToShow;
+- (void)addMainViewController:(UIViewController *)viewController percentToShow:(CGFloat)percentToShow;
 @end

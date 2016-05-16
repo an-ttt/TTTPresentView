@@ -17,12 +17,11 @@
 {
      NSAssert(self.navigationController, @"必须要找出navigation，而且所传的view必须要embed一个navigation controller");
     
-    [self.navigationController addChildViewController:viewControllerToPresent];
-    
     TTTPresentContainerView *containerView = [[TTTPresentContainerView alloc] initWithFrame:self.view.frame];
+    [self.navigationController addChildViewController:viewControllerToPresent];
     [self.navigationController.view addSubview:containerView];
     
-    [containerView addMainView:viewControllerToPresent.view percentToShow:percentToShow];
+    [containerView addMainViewController:viewControllerToPresent percentToShow:percentToShow];
     [containerView presentView];
 }
 
